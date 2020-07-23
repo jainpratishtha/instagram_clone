@@ -1,0 +1,67 @@
+Link {
+  color: white !important;
+}
+body {
+  color: white !important;
+  background-color: black !important;
+
+  background-image: url("https://www.transparenttextures.com/patterns/black-lozenge.png") !important;
+}
+.brand-logo,
+h2 {
+  font-family: "Grand Hotel", cursive;
+}
+.myCard {
+  margin-top: 30px;
+}
+.auth-card {
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 10px auto;
+  background-color: black;
+  color: white;
+  background-image: url("https://www.transparenttextures.com/patterns/black-lozenge.png") !important;
+}
+.input-filed {
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 10px auto;
+  background-color: black;
+  color: white;
+  background-image: url("https://www.transparenttextures.com/patterns/black-lozenge.png") !important;
+}
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 1px solid rgb(187, 72, 216) !important ;
+  box-shadow: 0 1px 0 0 #bb48d8 !important;
+}
+input:focus {
+  border-bottom: 1px solid rgb(187, 72, 216) !important ;
+  box-shadow: 0 1px 0 0 rgb(187, 72, 216) !important;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.item {
+  width: 30%;
+}
+
+.home-card {
+  max-width: 500px;
+  height: max-content;
+  margin: 26px auto;
+  padding: 30px;
+  border-radius: 50px;
+}
+.profile_small_photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+}
+.btn {
+  border-radius: 20px;
+}
