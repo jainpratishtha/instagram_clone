@@ -200,27 +200,13 @@ const Home = () => {
               <h6>{item.likes.length} Likes</h6>
               <h6>{item.title}</h6>
               <p>{item.body}</p>
-              {item.comments.map((comment) => {
+              {item.comments.map((record) => {
                 return (
-                  <h6>
+                  <h6 key={record._id}>
                     <span style={{ fontWeight: "500" }}>
-                      {comment.postedBy.name}&nbsp;&nbsp;
-                    </span>
-                    {comment.text}
-
-                    {comment.postedBy._id === state._id &&
-                      {
-                        /* <i
-                        className="material-icons"
-                        style={{ float: "right" }}
-                        onClick={() => {
-                          alert("coming soon");
-                          // deleteComment(item._id, comment._id);
-                        }}
-                      >
-                        delete
-                      </i> */
-                      }}
+                      {record.postedBy.name}
+                    </span>{" "}
+                    {record.text}
                   </h6>
                 );
               })}
