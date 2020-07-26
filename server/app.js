@@ -22,6 +22,7 @@ app.use(express.json()); // this will tell server to parse all the incoming requ
 app.use(require("./routes/auth")); // app. use is a way to register middleware or chain of middlewares (or multiple middlewares) before executing  any end route logic or intermediary route logic depending upon order of middleware registration sequence
 //this is how we register our routes
 app.use(require("./routes/posts"));
+app.use(require("./routes/user"));
 
 {
   //middleware

@@ -12,7 +12,6 @@ const CreatePost = () => {
   useEffect(() => {
     if (url) {
       fetch("/createPost", {
-        //connects to route /login in server
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -80,7 +79,7 @@ const CreatePost = () => {
       />
       <div className="file-field input-field" style={{ color: "white" }}>
         <div className="btn  waves-effect waves-light #4527a0 deep-purple darken-3">
-          <span>Uplaod Image</span>
+          <span>Upload Image</span>
           <input
             type="file"
             style={{ color: "white" }}

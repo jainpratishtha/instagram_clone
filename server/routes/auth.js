@@ -12,7 +12,7 @@ router.get("/protected", requireLogin, (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, pic } = req.body;
   if (!email || !password || !name) {
     return res.status(422).json({
       error: "please add the fields",
@@ -39,6 +39,7 @@ router.post("/signup", (req, res) => {
           email,
           password: hashedpassword,
           name,
+          pic: pic,
         });
 
         newUser
@@ -90,11 +91,11 @@ router.post("/login", (req, res) => {
               },
               JWT_SECRET
             );
-            const { _id, name, email } = savedUser;
+            const { _id, name, email, followers, following, pic } = savedUser;
             // console.log(token, _id, name, email);
             res.json({
               token,
-              user: { _id, name, email },
+              user: { _id, name, email, followers, following, pic },
             });
           } else {
             return res.status(422).json({

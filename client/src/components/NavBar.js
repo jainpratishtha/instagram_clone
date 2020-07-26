@@ -14,10 +14,23 @@ const NavBar = () => {
             <img
               className="profile_small_photo"
               style={{ margin: "15px 0 0 0" }}
-              src="https://images.unsplash.com/photo-1550831858-3c2581fed470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              src={state.pic}
               alt="profile"
             />
           </Link>
+        </li>,
+        <li>
+          <Link
+            to="#"
+            onClick={() => {
+              alert("coming soon!!");
+            }}
+          >
+            <i class="material-icons">chat</i>
+          </Link>
+        </li>,
+        <li>
+          <Link to="/followingPosts">Following Posts</Link>
         </li>,
         <li>
           <button

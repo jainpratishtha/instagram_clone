@@ -17,6 +17,18 @@ router.get("/allPosts", requireLogin, (req, res) => {
     .catch((err) => console.error(err));
 });
 
+router.get("/followingPosts", requireLogin, (req, res) => {
+  Post.find({ postedBy: { $in: req.user.following } })
+    .populate("postedBy", "_id name") //expand the postedBy and show just id and name
+    .populate("comments.postedBy", "_id name")
+    .then((posts) => {
+      return res.json({
+        posts,
+      });
+    })
+    .catch((err) => console.error(err));
+});
+
 router.post("/createPost", requireLogin, (req, res) => {
   const { title, body, pic } = req.body;
   if (!title || !body || !pic) {

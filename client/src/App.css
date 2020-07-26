@@ -65,3 +65,6 @@ input:focus {
 .btn {
   border-radius: 20px;
 }
+.material-icons:hover {
+  cursor: pointer;
+}

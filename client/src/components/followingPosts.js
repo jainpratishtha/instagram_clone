@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../App";
 import { Link } from "react-router-dom";
-const Home = () => {
+const FollowingPosts = () => {
   const [data, setData] = useState([]);
   const { state, dispatch } = useContext(UserContext);
 
   useEffect(() => {
-    fetch("/allPosts", {
+    fetch("/followingPosts", {
       headers: {
         // prettier-ignore
         "Authorization": "Bearer " + localStorage.getItem("jwt")
@@ -208,9 +208,8 @@ const Home = () => {
                     </span>
                     {comment.text}
 
-                    {comment.postedBy._id === state._id &&
-                      {
-                        /* <i
+                    {comment.postedBy._id === state._id && (
+                      <i
                         className="material-icons"
                         style={{ float: "right" }}
                         onClick={() => {
@@ -219,8 +218,8 @@ const Home = () => {
                         }}
                       >
                         delete
-                      </i> */
-                      }}
+                      </i>
+                    )}
                   </h6>
                 );
               })}
@@ -252,4 +251,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default FollowingPosts;
