@@ -9,6 +9,7 @@ router.get("/allPosts", requireLogin, (req, res) => {
   Post.find()
     .populate("postedBy", "_id name") //expand the postedBy and show just id and name
     .populate("comments.postedBy", "_id name")
+    .sort("-createdAt")
     .then((posts) => {
       return res.json({
         posts,
@@ -21,6 +22,7 @@ router.get("/followingPosts", requireLogin, (req, res) => {
   Post.find({ postedBy: { $in: req.user.following } })
     .populate("postedBy", "_id name") //expand the postedBy and show just id and name
     .populate("comments.postedBy", "_id name")
+    .sort("-createdAt")
     .then((posts) => {
       return res.json({
         posts,
